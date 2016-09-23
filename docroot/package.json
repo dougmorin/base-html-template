@@ -1,0 +1,19 @@
+{
+  "name": "base-html-template",
+  "description": "Base template for building static html websites",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-kss": "0.0.2",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^1.2.0",
+    "gulp-uglify": "^1.5.1",
+    "handlebars": "^4.0.5",
+    "imagemin-pngquant": "^4.2.0",
+    "snyk": "^1.8.3"
+  }
+}

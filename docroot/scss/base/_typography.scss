@@ -1,0 +1,319 @@
+// ==================================================
+// headings
+// ==================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: inherit;
+}
+
+h1 {
+  color: $h1-text;
+  font-family: $font;
+  font-size: $h1-size;
+  margin-bottom: 14px;
+
+  @include tablet-landscape-and-below {
+    font-size: $h1-size-tablet;
+  }
+
+  &.page-title {
+
+    .path-frontpage & {
+      display: none;
+    }
+  }
+
+  a {
+    color: $h1-link;
+
+    &:hover {
+      color: $h1-link-hover;
+    }
+  }
+}
+
+%h2,
+h2 {
+  color: $h2-text;
+  font-family: $font;
+  font-size: $h2-size;
+  margin-bottom: 10px;
+
+  @include mobile-only {
+    line-height: 1em;
+  }
+
+  a {
+    color: $h2-link;
+
+    &:hover {
+      color: $h2-link-hover;
+    }
+  }
+}
+
+h2 + img.alignright,
+h2 + img.alignleft,
+h2 + img.alignnone,
+h2 + img.aligncenter {
+  margin-top: 0;
+}
+
+h2 + img + p {
+  margin-top: 0;
+}
+
+h3 {
+  color: $h3-text;
+  font-family: $font;
+  font-size: $h3-size;
+  margin-bottom: 8px;
+
+  a {
+    color: $h3-link;
+
+    &:hover {
+      color: $h3-link-hover;
+    }
+  }
+}
+
+h3 + img.alignright,
+h3 + img.alignleft,
+h3 + img.alignnone,
+h3 + img.aligncenter {
+  margin-top: 10px;
+}
+
+h4 {
+  color: $h4-text;
+  font-size: $h4-size;
+  margin-bottom: 4px;
+
+  a {
+    color: $h4-link;
+
+    &:hover {
+      color: $h4-link-hover;
+    }
+  }
+}
+
+h5 {
+  color: $brand;
+  font-size: $h5-size;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 15px;
+
+  a {
+    color: $h5-link;
+
+    &:hover {
+      color: $brand;
+    }
+  }
+}
+
+h6 {
+  color: $h6-text;
+  font-size: $h6-size;
+
+  a {
+    color: $h6-link;
+
+    &:hover {
+      color: $h6-link-hover;
+    }
+  }
+}
+
+
+// ==================================================
+// content
+// ==================================================
+p {
+  color: $p-text;
+  font-size: $p-size;
+  line-height: 1.6;
+  margin-bottom: 20px;
+
+  img {
+    margin: 0;
+  }
+}
+
+p + img.alignright,
+p + img.alignleft,
+p + img.alignnone,
+p + img.aligncenter {
+  margin-top: 0;
+}
+
+hr {
+  border: 1px solid $rule;
+  border-top: 1px solid $rule;
+  clear: both;
+  height: 0;
+  margin: 10px 0;
+}
+
+code,
+pre {
+  font-size: 15px;
+}
+
+blockquote {
+  border-left: 10px solid $blockquote;
+  font-style: italic;
+  color: $blockquote;
+  padding-left: 15px;
+}
+
+// ==================================================
+// lists
+// ==================================================
+
+//  we use a lot of ULs that aren't bulleted.
+// don't forget to restore the bullets within content.
+nav ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul.none {
+  list-style: none;
+}
+
+ul.square {
+  list-style: square outside;
+}
+
+ul.circle {
+  list-style: circle outside;
+}
+
+ul.disc {
+  list-style: disc outside;
+}
+
+dl dt {
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+dl dd {
+  margin: 0 0 10px;
+}
+
+
+// ==================================================
+// links
+// ==================================================
+a,
+a:visited {
+  color: $link;
+  outline: 0;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $link-hover;
+  text-decoration: underline;
+}
+
+p a,
+p a:visited {
+  line-height: inherit;
+}
+
+// ==================================================
+// text level semantics
+// ==================================================
+em,
+i {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 1.1em;
+}
+
+sub,
+sup {
+  font-size: .9em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+// ==================================================
+// embedded content
+// ==================================================
+img,
+iframe,
+object,
+video {
+  border: 0;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+}
+
+// ==================================================
+// tables
+// ==================================================
+table {
+  border-collapse: collapse;
+  font-size: $p-size;
+  text-align: left;
+  width: 100%;
+
+  th {
+    color: $th-text;
+    font-weight: bold;
+    padding: 2px 8px;
+    text-transform: uppercase;
+  }
+
+  td {
+    border-top: 1px dotted $rule;
+    color: $td-text;
+    padding: 2px 8px;
+  }
+}

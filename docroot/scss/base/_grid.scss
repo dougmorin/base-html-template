@@ -1,0 +1,163 @@
+// ==================================================
+// Grid Math
+// ==================================================
+// Grid Values you can go either fluid (%) or fixed (px/em/ex/rem etc.)
+$width: 100%;
+$max-width: 1224px;
+$columns: 12; // If you add/remove columns adjust base grid classes
+$col-margin: 4%;
+$col-margin-right: 2%;
+$col-margin-left: 2%;
+
+// Math & mixins
+$col-width: ($width - ($col-margin * ($columns))) / $columns;
+$col-total-width: $col-width + $col-margin;
+
+@mixin row() {
+  float: left;
+  clear: both;
+  width: $width;
+}
+
+@mixin col($n: 1) {
+  @include span($n);
+  float: left;
+  display: inline;
+}
+
+@mixin span($n: 1) {
+  width: ($n * $col-width) + (($n - 1) * $col-margin);
+  @if $n == $columns {
+    margin-right: 0;
+  } @else {
+    margin-left: $col-margin-left;
+    margin-right: $col-margin-right;
+  }
+}
+
+// ==================================================
+// Base Grid
+// ==================================================
+// You can add more columns or less columns just adjust the number above in the Grid Value variables.
+%container,
+.container {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: 0 20px;
+  position: relative;
+  width: $width;
+
+  &::after {
+    clear: both;
+    content: '\0020';
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+%row,
+.row {
+  @include row;
+}
+
+// Nested Column Classes via mixin or class; you choose.
+@mixin first() {
+  margin-left: 0;
+}
+
+@mixin last() {
+  margin-right: 0;
+}
+
+.firstcol {
+  margin-left: 0;
+}
+
+.lastcol {
+  margin-right: 0;
+}
+
+// Base Grid
+.col1 {
+  @include col(1);
+}
+
+.col2 {
+  @include col(2);
+}
+
+%col3,
+.col3 {
+  @include col(3);
+}
+
+%col4,
+.col4 {
+  @include col(4);
+}
+
+.col5 {
+  @include col(5);
+}
+
+%col6,
+.col6 {
+  @include col(6);
+}
+
+.col7 {
+  @include col(7);
+}
+
+.col8 {
+  @include col(8);
+}
+
+.col9 {
+  @include col(9);
+}
+
+.col10 {
+  @include col(10);
+ }
+
+.col11 {
+  @include col(11);
+}
+
+%col12,
+.col12 {
+  @include col(12);
+}
+
+// ==================================================
+// Grid Clearing
+// ==================================================
+
+.row,
+.clearfix {
+  zoom: 1;
+
+  &::after {
+    clear: both;
+  }
+}
+
+%clearfix {
+  zoom: 1;
+
+  &::after {
+    clear: both;
+  }
+
+  &::before,
+  &::after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+  }
+}

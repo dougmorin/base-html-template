@@ -1,0 +1,79 @@
+// ==================================================
+// Brand
+// ==================================================
+$brand: #ccc;
+
+$selection: $brand;
+$highlight: #ffc;
+$bg-body: $brand;
+$content-area: #fff;
+
+// ==================================================
+// Typography
+// ==================================================
+$font: 'Helvetica', sans-serif;
+
+$container-padding: 20px;
+
+$h1-size: 3.6em;
+$h1-size-tablet: 2.6em;
+$h2-size: 24pt;
+$h3-size: 1.8em;
+$h4-size: 24pt;
+$h5-size: 24px;
+$h6-size: 1.4em;
+
+$h1-text: $brand-grey;
+$h2-text: $brand-grey;
+$h3-text: $brand-grey;
+$h4-text: $brand-grey;
+$h5-text: $brand-grey;
+$h6-text: $brand-grey;
+
+$h1-link: $brand-grey;
+$h2-link: $brand-grey;
+$h3-link: $brand-grey;
+$h4-link: $brand-grey;
+$h5-link: $brand-grey;
+$h6-link: $brand-grey;
+
+$h1-link-hover: $brand-grey;
+$h2-link-hover: $brand-grey;
+$h3-link-hover: $brand-grey;
+$h4-link-hover: $brand-grey;
+$h5-link-hover: $brand-grey;
+$h6-link-hover: $brand-grey;
+
+$p-text: $brand-grey;
+$p-size: 15pt;
+
+$link: $brand-red;
+$link-hover: $brand-red;
+
+$rule: $brand-grey;
+
+$blockquote: #444;
+
+$table-bg: #fff;
+$table-bg-hover: darken($table-bg, 10%);
+$td-text: #444;
+$th-text: $brand-grey;
+
+// ==================================================
+// Buttons
+// ==================================================
+$button-bg: #eee;
+$button-bg-focus: #e5e5e5;
+
+// ==================================================
+// Forms
+// ==================================================
+$valid: none;
+$invalid: #f0dddd; // red
+
+$input-bg: #fff;
+$input-border: #ccc;
+$input-color: #a4a4a4;
+$label-color: #444;
+
+$input-size: 1.2em;
