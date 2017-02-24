@@ -11,13 +11,13 @@ var gulp = require('gulp'),
 
 // Process SASS functionality
 gulp.task('process-scss', function() {
-  return sass('scss/style.scss', { style: 'expanded', compass: true, })
+  return sass('public_html/scss/style.scss', { style: 'expanded', compass: true, })
     .pipe(prefix(['last 2 versions']))
     .pipe(concat('style.css'))
-    .pipe(gulp.dest('tmp/'))
+    .pipe(gulp.dest('public_html/tmp/'))
     .pipe(rename('style.css.min'))
     .pipe(minifycss())
-    .pipe(gulp.dest('tmp/'))
+    .pipe(gulp.dest('public_html/tmp/'))
     .on('error', function (err) {
       console.error('Error', err.message);
     });
@@ -25,12 +25,12 @@ gulp.task('process-scss', function() {
 
 // Process custom SCRIPTS functionality
 gulp.task('process-custom-script', function() {
-  return gulp.src('js/custom/**/*.js')
+  return gulp.src('public_html/js/custom/**/*.js')
     .pipe(concat('script.js'))
-    .pipe(gulp.dest('tmp/'))
+    .pipe(gulp.dest('public_html/tmp/'))
     .pipe(uglify())
     .pipe(rename('script.js.min'))
-    .pipe(gulp.dest('tmp/'))
+    .pipe(gulp.dest('public_html/tmp/'))
     .on('error', function (err) {
       console.error('Error', err.message);
     });
@@ -40,6 +40,6 @@ gulp.task('process-custom-script', function() {
 gulp.task('default', function() {
   gulp.start('process-scss');
   gulp.start('process-custom-script');
-  gulp.watch('scss/**/*.scss', ['process-scss']);
-  gulp.watch('js/custom/**/*.js', ['process-custom-script']);
+  gulp.watch('public_html/scss/**/*.scss', ['process-scss']);
+  gulp.watch('public_html/js/custom/**/*.js', ['process-custom-script']);
 });
